@@ -16,7 +16,7 @@ RUN dotnet publish Nop.Web.csproj -c Release -o /app/published
 
 WORKDIR /app/published
 
-RUN mkdir logs bin
+RUN mkdir -p logs bin wwwroot/images/3d
 
 RUN chmod 775 App_Data \
               App_Data/DataProtectionKeys \
@@ -28,6 +28,7 @@ RUN chmod 775 App_Data \
               wwwroot/files/exportimport \
               wwwroot/icons \
               wwwroot/images \
+              wwwroot/images/3d \
               wwwroot/images/thumbs \
               wwwroot/images/uploaded \
 	      wwwroot/sitemaps
